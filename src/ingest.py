@@ -65,13 +65,19 @@ def grab_static(url):
     print("Static data ingested successfully.")
 
 def grab_live(url):
+    try:
+        req = requests.get(url)
+        if (not req):
+                print("error status != 200")
+                return None
 
-    req = requests.get(url)
-    if (not req):
-            print("error status != 200")
-            return None
+        data = req.json()
 
-    data = req.json()
+    except requests.exceptions.RequestException as e:
+        print(f"unable to request, network or HTTP error occured: {e}")
+
+    except ValueError as e:
+        print(f"Failed to parse JSON results + {e}")
 
     conn = sqlite3.connect(data_path + "station_status.db")
     cur = conn.cursor()
@@ -87,9 +93,10 @@ def grab_live(url):
     conn.commit()
     conn.close()
 
+if __name__ == "__main__":
+    grab_live(url_live)
 
-grab_live(url_live)
     
 
-    
+
 
