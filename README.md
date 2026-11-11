@@ -2,7 +2,8 @@
 
 
 
-The idea for citibike optimization comes from the problem of being dock blocked after school or an intership. As citibike becomes more popular, lyft fails to add enough bikes to deal with demand at the busiest hours of the day. 
-IDEA for implementation is to take inputs of a pickup location, a dropoff location, a preffered time, a time range, and a type of bike. Then the code will output an advisable time to leave within the range along with a historical estimate of your best bet at a dock to pickup and dropoff. 
+NEW IDEA::
 
-This steps out of an old project I worked on in high school, where I calculated the equivilence vector for a steady state of a matrix with many neighborhoods in manhattan and the 3 outer boroughs, utilizing historical citibike datasets to see where bikes were flowing. This is a bit different, but my love for citibikes has not changed.
+On google maps, only 1 mode of transportation is supported. In NYC, this means you either bike or train. But what if you want both? consider this:
+You're standing outside Nitehawk Cinema on Prospect Park in Brooklyn. You want to go home, 1st avenue and 59th in Manhattan. Opening Google Maps, there are 2 choices: a 55 minute train ride, or a 55 minute bike. 
+When I do this route, it takes me 35 minutes. Becuase I do both. I take the F train to 2nd Avenue station, then get off and bike up first avenue. This project will build this system so that we can really see which route is fastest if you're okay with hopping on a citibike after part of the train ride.
